@@ -11,7 +11,8 @@ function setLanguage(next) {
   document.querySelector('nav').setAttribute('aria-label', next === 'es' ? 'Principal' : 'Main');
   languageButton.innerHTML = `${next === 'es' ? 'EN' : 'ES'} <span aria-hidden="true">↗</span>`;
   languageButton.setAttribute('aria-label', next === 'es' ? 'Switch to English' : 'Cambiar a español');
-  document.querySelector('meta[name="description"]').content = next === 'es' ? 'Nonsquare Pixel Studio. Estudio independiente de videojuegos. Descubre Trivia Party y nuestros próximos proyectos.' : 'Nonsquare Pixel Studio. Independent game studio. Discover Trivia Party and our upcoming concepts.';
+  const description = document.querySelector('meta[name="description"]');
+  description.content = description.dataset[next === 'es' ? 'descriptionEs' : 'descriptionEn'] || (next === 'es' ? 'Nonsquare Pixel Studio. Estudio independiente de videojuegos. Descubre Trivia Party y nuestros próximos proyectos.' : 'Nonsquare Pixel Studio. Independent game studio. Discover Trivia Party and our upcoming concepts.');
   try { localStorage.setItem('nonsquare-language', next); } catch {}
 }
 languageButton.addEventListener('click', () => setLanguage(language === 'es' ? 'en' : 'es'));
