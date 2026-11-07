@@ -22,6 +22,8 @@ Reemplazar las ilustraciones conceptuales por capturas reales cuando estén disp
 
 ## Subida directa a Cloudflare Pages
 
+El fondo `assets/BackGrid.png` permanece fijo a la pantalla mediante `.site-backdrop`. Los elementos de marca utilizan `assets/OnlyLogo.png` y `assets/OnlyIcon.png`, con transparencia, y se desplazan con el resto del contenido. Las imágenes originales no se modifican; CSS encuadra los márgenes transparentes. Los paneles dejan visible la cuadrícula y oscurecen las zonas de lectura. Esta composición también se aplica a la página de privacidad.
+
 `nonsquare-cloudflare.zip` contiene los archivos públicos con `index.html` en la raíz. Se puede subir como una nueva implementación de producción en el proyecto existente de Cloudflare Pages. El ZIP no incluye Git ni archivos internos. El rediseño no cambia los textos ni finaliza el borrador de privacidad.
 
 ## Privacidad: borrador pendiente de finalizar
